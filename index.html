@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Radium X vs O - Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Home Screen -->
+  <div class="home-screen" id="homeScreen">
+    <h1 class="title">💃🎊 Let's Play the Game! 🎮 🎊💃</h1>
+    <button class="btn primary-btn" onclick="startGame()">Start Game</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div class="game-screen" id="gameScreen" style="display: none;">
+    <h1 class="title">🎉 Tic Tac Toe 🎉</h1>
+    
+    <h2 class="turn-indicator">
+      <span id="xTurn" class="active radium-text">X</span> vs 
+      <span id="oTurn" class="radium-text">O</span>
+    </h2>
+    
+    <div class="board" id="board"></div>
+    
+    <button class="btn secondary-btn" onclick="newGame()">Restart Game</button>
+  </div>
+
+  <!-- Result Popup -->
+  <div class="popup" id="popup" style="display: none;">
+    <h2 id="resultText"></h2>
+    <div class="popup-buttons">
+      <button class="btn primary-btn" onclick="newGame()">New Game</button>
+      <button class="btn secondary-btn" onclick="goHome()">Home</button>
+    </div>
+ 
+
+  <!-- Sound Effects -->
+  <audio id="dropSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+  <audio id="winSound" src="https://www.fesliyanstudios.com/play-mp3/6679" preload="auto"></audio>
+  <audio id="drawSound" src="https://www.fesliyanstudios.com/play-mp3/3875" preload="auto"></audio>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

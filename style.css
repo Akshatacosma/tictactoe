@@ -1,0 +1,146 @@
+body {
+  background: linear-gradient(135deg, #00c3ff, #00ff88, #ffff00);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.title {
+  margin-top: 60px;
+  font-size: 3.5em;
+  text-shadow: 3px 3px 6px #000, 0 0 20px rgba(255, 255, 255, 0.4);
+  animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 3px 3px 6px #000, 0 0 10px white;
+  }
+  to {
+    text-shadow: 3px 3px 6px #000, 0 0 30px white;
+  }
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px 35px;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00ff00, #adff2f);
+  color: black;
+  cursor: pointer;
+  box-shadow: 0 0 25px #00ff00;
+  transition: 0.4s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #00ff66, #ccff33);
+  transform: scale(1.08);
+  box-shadow: 0 0 30px #ccff33, 0 0 10px #fff inset;
+}
+
+.turn-indicator {
+  font-size: 2.2em;
+  margin-top: 30px;
+}
+
+.turn-indicator span {
+  padding: 12px 25px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0 12px;
+  box-shadow: 0 0 12px #fff;
+  transition: 0.3s ease;
+}
+
+.turn-indicator span.active {
+  background: #ffff00;
+  color: black;
+  box-shadow: 0 0 20px yellow, 0 0 10px white;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  justify-content: center;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.cell {
+  width: 110px;
+  height: 110px;
+  font-size: 3em;
+  font-weight: bold;
+  background: #111;
+  color: #00ffe7;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 18px cyan;
+  transition: 0.2s;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to top left, #ffffcc, #fff);
+  color: #111;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 0 25px gold;
+  animation: popupIn 0.4s ease-out;
+}
+
+@keyframes popupIn {
+  from {
+    transform: translate(-50%, -60%) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.popup button {
+  margin: 15px 10px 0 10px;
+  background: gold;
+  color: black;
+  box-shadow: 0 0 15px orange;
+  font-weight: bold;
+}
+
+.popup button:hover {
+  background: orange;
+  box-shadow: 0 0 20px gold;
+}
+
+/* Radium neon effect */
+.radium-text {
+  color: #00ff00;
+  text-shadow: 0 0 6px #00ff00, 0 0 12px #00ff00, 0 0 18px #00ff00;
+}
+
+.radium-text.active {
+  color: yellow;
+  text-shadow: 0 0 6px yellow, 0 0 12px yellow, 0 0 18px yellow;
+}
